@@ -1,0 +1,24 @@
+
+<div class="jumbotron mt-5">
+    <div class="display">
+        <h2 class="heading">Busca por Categoría y País</h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 mt-3">
+            <form (ngSubmit)="findNew()">
+                <div class="form-group ">
+                    <select name="category" [(ngModel)]="selectedCategory" class="form-control form-control-lg mb-2 ">
+                        <option [value]="cat.value" *ngFor="let cat of categories">{{cat.name}}</option>
+                    </select>
+
+                    <select name="country" [(ngModel)]="selectedCountry" class="form-control form-control-lg mb-2">
+                        <option [value]="cou.value" *ngFor="let cou of countries">{{cou.name}}</option>
+                    </select>
+                    
+                    <hr class="my-4">
+                    <button type=" submit" class="btn btn-light btn-block btn-lg">Buscar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

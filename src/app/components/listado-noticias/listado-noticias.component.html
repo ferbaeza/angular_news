@@ -1,0 +1,24 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let new of newsArray" class="col">
+        <div class="card mb-3">
+            <div class="card-body " style="height:200px">
+                <h5 class="card-title">{{ new.title}}</h5>
+                <h6 class="card-subtitle text-muted">{{ new.source.author}}</h6>
+                <h6 class="card-subtitle text-muted">{{ new.source.name}}</h6>
+            </div>
+            <div class="image">
+                <img class="rounded mx-auto d-block" [src]="new.urlToImage" style="height: 150px; width: 300px;">
+            </div>
+            <div class="card-body" style="height:150px">
+                <p class="card-text">{{ new.description }}</p>
+            </div>
+            <div>
+                <a [href]="new.url" target="_blank" class="btn btn-secondary btn-block">Ver en la web</a>
+            </div>
+            
+            <div class="card-footer text-muted text-center">{{new.publishedAt}}
+            </div>
+        </div>
+
+    </div>
+</div>
